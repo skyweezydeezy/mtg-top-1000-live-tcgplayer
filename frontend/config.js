@@ -9,4 +9,4 @@
 
   Never put TCGplayer API keys in this file.
 */
-window.MTGMP_API_URL = "http://localhost:3000";
+window.MTGMP_API_URL = "https://mtg-top-1000-live-tcgplayer-production.up.railway.app";
