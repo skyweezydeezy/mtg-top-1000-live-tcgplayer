@@ -1,4 +1,4 @@
-import { enrichCardsWithScryfall } from "./scryfallService.js";
+import { enrichCardsWithScryfall, cleanCardName } from "./scryfallService.js";
 
 const DEFAULT_GAME = "magic";
 
@@ -11,27 +11,24 @@ export async function fetchTcgApiDevTopLive({ period = "30d", limit = 100 } = {}
   const safeLimit = Math.max(1, Math.min(Number(limit || 100), 100));
   const mappedPeriod = mapPeriod(period);
 
-  // tcgapi.dev top-movers is limited, so combine upward and downward movers.
-  const upLimit = Math.min(50, Math.ceil(safeLimit / 2));
-  const downLimit = Math.min(50, safeLimit - upLimit);
-
+  // Fetch the full available mover pool, then filter to real Scryfall-matched cards.
   const [upRows, downRows] = await Promise.all([
-    fetchTopMovers({ direction: "up", period: mappedPeriod, limit: upLimit }),
-    downLimit > 0
-      ? fetchTopMovers({ direction: "down", period: mappedPeriod, limit: downLimit })
-      : Promise.resolve([])
+    fetchTopMovers({ direction: "up", period: mappedPeriod, limit: 50 }),
+    fetchTopMovers({ direction: "down", period: mappedPeriod, limit: 50 })
   ]);
 
   const normalized = dedupeByCardId([...upRows, ...downRows])
     .map((row, index) => normalizeTcgApiDevMover(row, index, mappedPeriod))
     .filter((card) => card.name && card.name !== "Unknown Card")
-    .sort((a, b) => Math.abs(b.trendPct) - Math.abs(a.trendPct))
+    // Sort initially by weighted move, not raw percent.
+    .sort((a, b) => b.weightedMoveScore - a.weightedMoveScore);
+
+  const enriched = await enrichCardsWithScryfall(normalized, { requireMatch: true });
+
+  return enriched
+    .sort((a, b) => b.weightedMoveScore - a.weightedMoveScore)
     .slice(0, safeLimit)
     .map((card, index) => ({ ...card, rank: index + 1 }));
-
-  const enriched = await enrichCardsWithScryfall(normalized);
-
-  return enriched.map((card, index) => ({ ...card, rank: index + 1 }));
 }
 
 async function fetchTopMovers({ direction, period, limit }) {
@@ -78,9 +75,13 @@ function dedupeByCardId(rows) {
   const out = [];
 
   for (const row of rows) {
+    const rawName = string(pick(row, ["name", "card.name", "product.name", "productName", "title"]));
+    const cleanName = cleanCardName(rawName);
+    const setName = string(pick(row, ["set_name", "setName", "set", "card.set_name", "product.set_name"]));
+
     const key = String(
       pick(row, ["id", "card_id", "tcgplayer_id", "tcgplayerId", "product.id", "card.id"]) ||
-      `${pick(row, ["name", "card.name", "product.name"])}|${pick(row, ["set", "set_name", "card.set", "product.set"])}`
+      `${cleanName}|${setName}`
     );
 
     if (seen.has(key)) continue;
@@ -92,13 +93,15 @@ function dedupeByCardId(rows) {
 }
 
 function normalizeTcgApiDevMover(row, index, period) {
-  const name = string(pick(row, [
+  const rawName = string(pick(row, [
     "name",
     "card.name",
     "product.name",
     "productName",
     "title"
   ]) || "Unknown Card");
+
+  const cleanedName = cleanCardName(rawName);
 
   const marketPrice = number(pick(row, [
     "market_price",
@@ -161,26 +164,34 @@ function normalizeTcgApiDevMover(row, index, period) {
     "tcgplayerId"
   ]) || `tcgapi-${index + 1}`);
 
+  const productImage = string(pick(row, [
+    "image_url",
+    "imageUrl",
+    "image",
+    "card.image_url",
+    "card.imageUrl",
+    "product.image_url",
+    "product.imageUrl"
+  ]));
+
+  const weighting = calculateWeightedMove({ marketPrice, trendPct });
+
   return {
     id,
     rank: index + 1,
     tcgplayerId: tcgplayerId || null,
-    name,
+    sourceName: rawName,
+    cleanName: cleanedName,
+    name: cleanedName || rawName,
     set: string(pick(row, ["set_code", "setCode", "set", "card.set", "product.set"])).toUpperCase(),
     setName: string(pick(row, ["set_name", "setName", "set", "card.set_name", "product.set_name"])),
     rarity: titleCase(string(pick(row, ["rarity", "card.rarity", "product.rarity"]) || "Unknown")),
     colors: ["C"],
     formats: ["Commander"],
     typeLine: string(pick(row, ["type_line", "typeLine", "product_type", "productType", "type"]) || "Cards"),
-    imageUrl: string(pick(row, [
-      "image_url",
-      "imageUrl",
-      "image",
-      "card.image_url",
-      "card.imageUrl",
-      "product.image_url",
-      "product.imageUrl"
-    ])),
+    imageUrl: productImage,
+
+    // Activity fields.
     totalSales: roundMoney(marketPrice * Math.max(1, listings)),
     copiesSold: listings,
     marketPrice: roundMoney(marketPrice),
@@ -189,13 +200,75 @@ function normalizeTcgApiDevMover(row, index, period) {
     highPrice: 0,
     directLow: roundMoney(number(pick(row, ["lowest_with_shipping", "lowestWithShipping"]))),
     trendPct,
-    productUrl: buildProductUrl(tcgplayerId, name)
+
+    // Weighted bubble fields.
+    previousPrice: weighting.previousPrice,
+    dollarChange: weighting.dollarChange,
+    valueWeight: weighting.valueWeight,
+    pennySpikePenalty: weighting.pennySpikePenalty,
+    weightedMoveScore: weighting.weightedMoveScore,
+    bubbleScore: weighting.weightedMoveScore,
+
+    productUrl: buildProductUrl(tcgplayerId, rawName)
+  };
+}
+
+/*
+  Weighted movement formula.
+
+  Problem:
+    A $0.02 card moving to $1.00 is a 4,900% spike, but only a $0.98 move.
+    A $10.00 card moving to $15.00 is only a 50% spike, but a $5.00 move.
+
+  Solution:
+    Bubble size should reflect actual market weight, not raw percentage.
+
+  Formula:
+    previousPrice = currentPrice / (1 + trendPct / 100)
+    dollarChange = currentPrice - previousPrice
+    valueWeight = log10(currentPrice + 1)
+    pennySpikePenalty = currentPrice < 2 ? max(0.15, currentPrice / 2) : 1
+    weightedMoveScore = abs(dollarChange) * valueWeight * pennySpikePenalty
+
+  Result:
+    Cheap penny spikes still show up, but they do not dominate the visual field.
+*/
+function calculateWeightedMove({ marketPrice, trendPct }) {
+  const current = Math.max(0, number(marketPrice));
+  const pct = number(trendPct);
+
+  let previous = current;
+
+  if (pct > -99.999 && pct !== 0) {
+    previous = current / (1 + pct / 100);
+  }
+
+  if (!Number.isFinite(previous) || previous < 0) {
+    previous = 0;
+  }
+
+  const dollarChange = current - previous;
+  const valueWeight = Math.log10(current + 1);
+
+  // Softly penalize very cheap cards so tiny absolute moves do not become giant bubbles.
+  const pennySpikePenalty = current < 2
+    ? Math.max(0.15, current / 2)
+    : 1;
+
+  const weightedMoveScore = Math.abs(dollarChange) * valueWeight * pennySpikePenalty;
+
+  return {
+    previousPrice: roundMoney(previous),
+    dollarChange: roundMoney(dollarChange),
+    valueWeight: roundNumber(valueWeight, 4),
+    pennySpikePenalty: roundNumber(pennySpikePenalty, 4),
+    weightedMoveScore: roundNumber(weightedMoveScore, 6)
   };
 }
 
 function extractArray(data) {
   if (Array.isArray(data)) return data;
-  if (Array.isArray(data.data)) return data.data;
+  if (Array.isArray(data.data)) return data;
   if (Array.isArray(data.results)) return data.results;
   if (Array.isArray(data.cards)) return data.cards;
   if (Array.isArray(data.movers)) return data.movers;
@@ -227,6 +300,13 @@ function number(value) {
 function roundMoney(value) {
   const n = Number(value);
   return Number.isFinite(n) ? Math.round(n * 100) / 100 : 0;
+}
+
+function roundNumber(value, digits = 4) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return 0;
+  const f = Math.pow(10, digits);
+  return Math.round(n * f) / f;
 }
 
 function string(value) {

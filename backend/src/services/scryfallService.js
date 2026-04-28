@@ -1,14 +1,17 @@
 const SCRYFALL_API = "https://api.scryfall.com";
 
-export async function enrichCardsWithScryfall(cards) {
+export async function enrichCardsWithScryfall(cards, options = {}) {
+  const requireMatch = options.requireMatch ?? true;
+
   if (!Array.isArray(cards) || cards.length === 0) return cards;
 
-  const identifiers = cards
+  const lookupNames = cards
     .map((card) => cleanCardName(card.name))
-    .filter(Boolean)
-    .map((name) => ({ name }));
+    .filter(Boolean);
 
-  if (!identifiers.length) return cards;
+  const identifiers = [...new Set(lookupNames)].map((name) => ({ name }));
+
+  if (!identifiers.length) return requireMatch ? [] : cards;
 
   const chunks = chunkArray(identifiers, 75);
   const byName = new Map();
@@ -32,16 +35,11 @@ export async function enrichCardsWithScryfall(cards) {
       }
 
       const data = await response.json();
-      for (const scryCard of data.data || []) {
-        byName.set(normalizeName(scryCard.name), scryCard);
 
-        // Double-faced cards sometimes have "Front // Back"; also map front face.
-        if (Array.isArray(scryCard.card_faces) && scryCard.card_faces[0]?.name) {
-          byName.set(normalizeName(scryCard.card_faces[0].name), scryCard);
-        }
+      for (const scryCard of data.data || []) {
+        addScryfallCard(byName, scryCard);
       }
 
-      // Scryfall asks clients to be polite. Small delay between batches.
       if (i < chunks.length - 1) {
         await wait(90);
       }
@@ -50,12 +48,24 @@ export async function enrichCardsWithScryfall(cards) {
     }
   }
 
-  return cards.map((card) => {
+  const enriched = [];
+
+  for (const card of cards) {
+    const cleaned = cleanCardName(card.name);
     const scryCard =
       byName.get(normalizeName(card.name)) ||
-      byName.get(normalizeName(cleanCardName(card.name)));
+      byName.get(normalizeName(cleaned));
 
-    if (!scryCard) return card;
+    if (!scryCard) {
+      if (!requireMatch) {
+        enriched.push({
+          ...card,
+          sourceName: card.sourceName || card.name,
+          cleanName: cleaned
+        });
+      }
+      continue;
+    }
 
     const imageUrl =
       scryCard.image_uris?.normal ||
@@ -74,10 +84,14 @@ export async function enrichCardsWithScryfall(cards) {
 
     const formats = legalFormatsFromScryfall(scryCard.legalities, card.formats);
 
-    return {
+    enriched.push({
       ...card,
-      // Preserve tcgapi.dev pricing/ranking, but trust Scryfall for public card identity.
-      name: scryCard.name || card.name,
+
+      // Keep raw provider product name for debugging, but display Scryfall identity.
+      sourceName: card.sourceName || card.name,
+      cleanName: cleaned,
+
+      name: scryCard.name || cleaned || card.name,
       set: String(scryCard.set || card.set || "").toUpperCase(),
       setName: scryCard.set_name || card.setName,
       rarity: titleCase(scryCard.rarity || card.rarity),
@@ -86,11 +100,29 @@ export async function enrichCardsWithScryfall(cards) {
       typeLine: scryCard.type_line || card.typeLine,
       imageUrl,
       tcgplayerId: card.tcgplayerId || scryCard.tcgplayer_id || null,
+
+      // Preserve exact provider TCGplayer product link first.
       productUrl:
+        card.productUrl ||
+        (card.tcgplayerId ? `https://www.tcgplayer.com/product/${card.tcgplayerId}` : "") ||
         scryCard.purchase_uris?.tcgplayer ||
-        (scryCard.tcgplayer_id ? `https://www.tcgplayer.com/product/${scryCard.tcgplayer_id}` : card.productUrl)
-    };
-  });
+        (scryCard.tcgplayer_id ? `https://www.tcgplayer.com/product/${scryCard.tcgplayer_id}` : "")
+    });
+  }
+
+  return enriched;
+}
+
+function addScryfallCard(map, scryCard) {
+  if (!scryCard?.name) return;
+
+  map.set(normalizeName(scryCard.name), scryCard);
+
+  if (Array.isArray(scryCard.card_faces)) {
+    for (const face of scryCard.card_faces) {
+      if (face?.name) map.set(normalizeName(face.name), scryCard);
+    }
+  }
 }
 
 function legalFormatsFromScryfall(legalities, fallback = []) {
@@ -117,11 +149,34 @@ function legalFormatsFromScryfall(legalities, fallback = []) {
   return formats.length ? formats : fallback;
 }
 
-function cleanCardName(name) {
-  return String(name || "")
-    .replace(/\s+Demo\s+\d+$/i, "")
-    .replace(/\s+\(\d+\)$/i, "")
-    .trim();
+export function cleanCardName(name) {
+  let s = String(name || "").trim();
+
+  // Remove demo suffixes from old sample data.
+  s = s.replace(/\s+Demo\s+\d+$/i, "");
+
+  // TCGplayer World Championship deck variants:
+  // "Aeolipile - 1996 Michael Loconto (FEM) (SB)" -> "Aeolipile"
+  s = s.replace(/\s+-\s+\d{4}\s+.*$/i, "");
+
+  // Remove obvious edition/condition/slot suffixes:
+  // "Animate Dead (CE)" -> "Animate Dead"
+  // "Forest (B)" -> "Forest"
+  s = s.replace(/\s*\((CE|IE|Intl\.?\s*Collectors'? Edition|International Edition|Collector'?s Edition|SB|MB|A|B|C|D|E|F|G|H|Oversized|Foil|Non-Foil|Etched Foil)\)\s*$/gi, "");
+
+  // Remove common marketing suffixes after a dash.
+  s = s.replace(/\s+-\s+(Borderless|Extended Art|Showcase|Retro Frame|Foil Etched|Surge Foil|Prerelease Promo|Buy-a-Box Promo|Promo Pack|Store Championship|Commander Party).*$/i, "");
+
+  // Remove trailing set code parenthetical.
+  s = s.replace(/\s*\(([A-Z0-9]{2,6})\)\s*$/g, "");
+
+  // Remove collector-number style suffixes.
+  s = s.replace(/\s+#\d+[a-z]?$/i, "");
+
+  // Collapse extra spaces.
+  s = s.replace(/\s+/g, " ").trim();
+
+  return s;
 }
 
 function normalizeName(name) {
