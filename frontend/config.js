@@ -1,14 +1,9 @@
 /*
   MTG Top 100 Live frontend config.
-
-  IMPORTANT:
-  This must point to your Railway backend base URL.
-  Do not put your tcgapi.dev key here.
-  The API key belongs only in Railway variables.
-
-  Example:
-    window.MTGMP_API_URL = "https://your-service-name.up.railway.app";
+  Replace this URL with your exact Railway backend URL.
+  Do not include a trailing slash.
+  Do not put TCGAPI_DEV_KEY here.
 */
 
-window.MTGMP_API_URL = "https://mtg-market-pulse-api-production.up.railway.app";
-window.MTGMP_APP_VERSION = "2026.04.28.frontend-full-replacement";
+window.MTGMP_API_URL = "REPLACE_WITH_YOUR_RAILWAY_BACKEND_URL";
+window.MTGMP_APP_VERSION = "2026.04.28.no-mock-live-check";
