@@ -1,0 +1,11 @@
+{
+  "name": "mtg-top-1000-live-tcgplayer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MTG Top 1000 live TCGplayer dashboard monorepo",
+  "scripts": {
+    "backend:install": "cd backend && npm install",
+    "backend:dev": "cd backend && npm run dev",
+    "backend:start": "cd backend && npm start"
+  }
+}

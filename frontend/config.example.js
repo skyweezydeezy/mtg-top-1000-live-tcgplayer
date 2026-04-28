@@ -1,0 +1,1 @@
+window.MTGMP_API_URL = "https://your-railway-service.up.railway.app";

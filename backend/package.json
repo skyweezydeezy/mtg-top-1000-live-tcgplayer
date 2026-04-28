@@ -1,0 +1,21 @@
+{
+  "name": "mtg-top-1000-live-tcgplayer-backend",
+  "version": "1.0.0",
+  "description": "Railway backend for live TCGplayer-powered MTG Top 1000 dashboard",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "check": "node src/server.js --check",
+    "test:env": "node src/server.js --check"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

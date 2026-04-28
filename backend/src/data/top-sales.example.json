@@ -1,0 +1,1267 @@
+{
+  "cards": [
+    {
+      "rank": 1,
+      "tcgplayerId": 100000,
+      "name": "Sol Ring",
+      "set": "CMM",
+      "setName": "Commander Masters",
+      "rarity": "Uncommon",
+      "colors": [
+        "C"
+      ],
+      "formats": [
+        "Commander",
+        "Legacy"
+      ],
+      "typeLine": "Artifact",
+      "imageUrl": "",
+      "totalSales": 16500.0,
+      "copiesSold": 15000,
+      "marketPrice": 1.1,
+      "lowPrice": 1.01,
+      "midPrice": 1.1,
+      "highPrice": 1.38,
+      "directLow": 1.08,
+      "trendPct": -8.55,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Sol%20Ring&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 2,
+      "tcgplayerId": 100001,
+      "name": "Swords to Plowshares",
+      "set": "BLC",
+      "setName": "Bloomburrow Commander",
+      "rarity": "Uncommon",
+      "colors": [
+        "W"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 17231.28,
+      "copiesSold": 13054,
+      "marketPrice": 1.32,
+      "lowPrice": 1.21,
+      "midPrice": 1.32,
+      "highPrice": 1.65,
+      "directLow": 1.29,
+      "trendPct": -7.6,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Swords%20to%20Plowshares&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 3,
+      "tcgplayerId": 100002,
+      "name": "Rhystic Study",
+      "set": "WOT",
+      "setName": "Wilds of Eldraine: Enchanting Tales",
+      "rarity": "Rare",
+      "colors": [
+        "U"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Enchantment",
+      "imageUrl": "",
+      "totalSales": 407471.4,
+      "copiesSold": 8860,
+      "marketPrice": 45.99,
+      "lowPrice": 42.31,
+      "midPrice": 45.99,
+      "highPrice": 57.49,
+      "directLow": 45.07,
+      "trendPct": -6.65,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Rhystic%20Study&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 4,
+      "tcgplayerId": 100003,
+      "name": "Smothering Tithe",
+      "set": "RNA",
+      "setName": "Ravnica Allegiance",
+      "rarity": "Rare",
+      "colors": [
+        "W"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Enchantment",
+      "imageUrl": "",
+      "totalSales": 274891.26,
+      "copiesSold": 7998,
+      "marketPrice": 34.37,
+      "lowPrice": 31.62,
+      "midPrice": 34.37,
+      "highPrice": 42.96,
+      "directLow": 33.68,
+      "trendPct": -5.7,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Smothering%20Tithe&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 5,
+      "tcgplayerId": 100004,
+      "name": "The One Ring",
+      "set": "LTR",
+      "setName": "The Lord of the Rings: Tales of Middle-earth",
+      "rarity": "Mythic",
+      "colors": [
+        "C"
+      ],
+      "formats": [
+        "Commander",
+        "Legacy"
+      ],
+      "typeLine": "Legendary Artifact",
+      "imageUrl": "",
+      "totalSales": 542100.48,
+      "copiesSold": 7302,
+      "marketPrice": 74.24,
+      "lowPrice": 68.3,
+      "midPrice": 74.24,
+      "highPrice": 92.8,
+      "directLow": 72.76,
+      "trendPct": -4.75,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=The%20One%20Ring&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 6,
+      "tcgplayerId": 100005,
+      "name": "Cyclonic Rift",
+      "set": "RTR",
+      "setName": "Return to Ravnica",
+      "rarity": "Rare",
+      "colors": [
+        "U"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 106308.72,
+      "copiesSold": 7031,
+      "marketPrice": 15.12,
+      "lowPrice": 13.91,
+      "midPrice": 15.12,
+      "highPrice": 18.9,
+      "directLow": 14.82,
+      "trendPct": -3.8,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Cyclonic%20Rift&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 7,
+      "tcgplayerId": 100006,
+      "name": "Dockside Extortionist",
+      "set": "C21",
+      "setName": "Commander 2021",
+      "rarity": "Mythic",
+      "colors": [
+        "R"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Creature \u2014 Goblin Pirate",
+      "imageUrl": "",
+      "totalSales": 238215.64,
+      "copiesSold": 6812,
+      "marketPrice": 34.97,
+      "lowPrice": 32.17,
+      "midPrice": 34.97,
+      "highPrice": 43.71,
+      "directLow": 34.27,
+      "trendPct": -2.85,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Dockside%20Extortionist&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 8,
+      "tcgplayerId": 100007,
+      "name": "Force of Will",
+      "set": "DMR",
+      "setName": "Dominaria Remastered",
+      "rarity": "Mythic",
+      "colors": [
+        "U"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 579860.48,
+      "copiesSold": 6662,
+      "marketPrice": 87.04,
+      "lowPrice": 80.08,
+      "midPrice": 87.04,
+      "highPrice": 108.8,
+      "directLow": 85.3,
+      "trendPct": -1.9,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Force%20of%20Will&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 9,
+      "tcgplayerId": 100008,
+      "name": "Demonic Tutor",
+      "set": "STA",
+      "setName": "Strixhaven Mystical Archive",
+      "rarity": "Mythic",
+      "colors": [
+        "B"
+      ],
+      "formats": [
+        "Commander",
+        "Legacy"
+      ],
+      "typeLine": "Sorcery",
+      "imageUrl": "",
+      "totalSales": 293011.96,
+      "copiesSold": 6484,
+      "marketPrice": 45.19,
+      "lowPrice": 41.57,
+      "midPrice": 45.19,
+      "highPrice": 56.49,
+      "directLow": 44.29,
+      "trendPct": -0.95,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Demonic%20Tutor&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 10,
+      "tcgplayerId": 100009,
+      "name": "Heroic Intervention",
+      "set": "M21",
+      "setName": "Core Set 2021",
+      "rarity": "Rare",
+      "colors": [
+        "G"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 52748.37,
+      "copiesSold": 6213,
+      "marketPrice": 8.49,
+      "lowPrice": 7.81,
+      "midPrice": 8.49,
+      "highPrice": 10.61,
+      "directLow": 8.32,
+      "trendPct": 0.0,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Heroic%20Intervention&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 11,
+      "tcgplayerId": 100010,
+      "name": "Sol Ring Demo 11",
+      "set": "CMM",
+      "setName": "Commander Masters",
+      "rarity": "Uncommon",
+      "colors": [
+        "C"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Artifact",
+      "imageUrl": "",
+      "totalSales": 16263.24,
+      "copiesSold": 14266,
+      "marketPrice": 1.14,
+      "lowPrice": 1.05,
+      "midPrice": 1.14,
+      "highPrice": 1.42,
+      "directLow": 1.12,
+      "trendPct": 0.95,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Sol%20Ring&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 12,
+      "tcgplayerId": 100011,
+      "name": "Swords to Plowshares Demo 12",
+      "set": "BLC",
+      "setName": "Bloomburrow Commander",
+      "rarity": "Uncommon",
+      "colors": [
+        "W"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 17009.92,
+      "copiesSold": 12416,
+      "marketPrice": 1.37,
+      "lowPrice": 1.26,
+      "midPrice": 1.37,
+      "highPrice": 1.71,
+      "directLow": 1.34,
+      "trendPct": 1.9,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Swords%20to%20Plowshares&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 13,
+      "tcgplayerId": 100012,
+      "name": "Rhystic Study Demo 13",
+      "set": "WOT",
+      "setName": "Wilds of Eldraine: Enchanting Tales",
+      "rarity": "Rare",
+      "colors": [
+        "U"
+      ],
+      "formats": [
+        "Commander",
+        "Legacy"
+      ],
+      "typeLine": "Enchantment",
+      "imageUrl": "",
+      "totalSales": 402304.98,
+      "copiesSold": 8427,
+      "marketPrice": 47.74,
+      "lowPrice": 43.92,
+      "midPrice": 47.74,
+      "highPrice": 59.68,
+      "directLow": 46.79,
+      "trendPct": 2.85,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Rhystic%20Study&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 14,
+      "tcgplayerId": 100013,
+      "name": "Smothering Tithe Demo 14",
+      "set": "RNA",
+      "setName": "Ravnica Allegiance",
+      "rarity": "Rare",
+      "colors": [
+        "W"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Enchantment",
+      "imageUrl": "",
+      "totalSales": 271037.41,
+      "copiesSold": 7607,
+      "marketPrice": 35.63,
+      "lowPrice": 32.78,
+      "midPrice": 35.63,
+      "highPrice": 44.54,
+      "directLow": 34.92,
+      "trendPct": 3.8,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Smothering%20Tithe&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 15,
+      "tcgplayerId": 100014,
+      "name": "The One Ring Demo 15",
+      "set": "LTR",
+      "setName": "The Lord of the Rings: Tales of Middle-earth",
+      "rarity": "Mythic",
+      "colors": [
+        "C"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Legendary Artifact",
+      "imageUrl": "",
+      "totalSales": 533792.7,
+      "copiesSold": 6945,
+      "marketPrice": 76.86,
+      "lowPrice": 70.71,
+      "midPrice": 76.86,
+      "highPrice": 96.08,
+      "directLow": 75.32,
+      "trendPct": 4.75,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=The%20One%20Ring&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 16,
+      "tcgplayerId": 100015,
+      "name": "Cyclonic Rift Demo 16",
+      "set": "RTR",
+      "setName": "Return to Ravnica",
+      "rarity": "Rare",
+      "colors": [
+        "U"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 104584.68,
+      "copiesSold": 6687,
+      "marketPrice": 15.64,
+      "lowPrice": 14.39,
+      "midPrice": 15.64,
+      "highPrice": 19.55,
+      "directLow": 15.33,
+      "trendPct": 5.7,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Cyclonic%20Rift&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 17,
+      "tcgplayerId": 100016,
+      "name": "Dockside Extortionist Demo 17",
+      "set": "C21",
+      "setName": "Commander 2021",
+      "rarity": "Mythic",
+      "colors": [
+        "R"
+      ],
+      "formats": [
+        "Commander",
+        "Legacy"
+      ],
+      "typeLine": "Creature \u2014 Goblin Pirate",
+      "imageUrl": "",
+      "totalSales": 233985.36,
+      "copiesSold": 6478,
+      "marketPrice": 36.12,
+      "lowPrice": 33.23,
+      "midPrice": 36.12,
+      "highPrice": 45.15,
+      "directLow": 35.4,
+      "trendPct": 6.65,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Dockside%20Extortionist&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 18,
+      "tcgplayerId": 100017,
+      "name": "Force of Will Demo 18",
+      "set": "DMR",
+      "setName": "Dominaria Remastered",
+      "rarity": "Mythic",
+      "colors": [
+        "U"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 569099.52,
+      "copiesSold": 6336,
+      "marketPrice": 89.82,
+      "lowPrice": 82.63,
+      "midPrice": 89.82,
+      "highPrice": 112.27,
+      "directLow": 88.02,
+      "trendPct": 7.6,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Force%20of%20Will&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 19,
+      "tcgplayerId": 100018,
+      "name": "Demonic Tutor Demo 19",
+      "set": "STA",
+      "setName": "Strixhaven Mystical Archive",
+      "rarity": "Mythic",
+      "colors": [
+        "B"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Sorcery",
+      "imageUrl": "",
+      "totalSales": 209616.33,
+      "copiesSold": 6167,
+      "marketPrice": 33.99,
+      "lowPrice": 31.27,
+      "midPrice": 33.99,
+      "highPrice": 42.49,
+      "directLow": 33.31,
+      "trendPct": 8.55,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Demonic%20Tutor&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 20,
+      "tcgplayerId": 100019,
+      "name": "Heroic Intervention Demo 20",
+      "set": "M21",
+      "setName": "Core Set 2021",
+      "rarity": "Rare",
+      "colors": [
+        "G"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 52235.56,
+      "copiesSold": 5909,
+      "marketPrice": 8.84,
+      "lowPrice": 8.13,
+      "midPrice": 8.84,
+      "highPrice": 11.05,
+      "directLow": 8.66,
+      "trendPct": -8.55,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Heroic%20Intervention&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 21,
+      "tcgplayerId": 100020,
+      "name": "Sol Ring Demo 21",
+      "set": "CMM",
+      "setName": "Commander Masters",
+      "rarity": "Uncommon",
+      "colors": [
+        "C"
+      ],
+      "formats": [
+        "Commander",
+        "Legacy"
+      ],
+      "typeLine": "Artifact",
+      "imageUrl": "",
+      "totalSales": 16147.11,
+      "copiesSold": 13569,
+      "marketPrice": 1.19,
+      "lowPrice": 1.09,
+      "midPrice": 1.19,
+      "highPrice": 1.49,
+      "directLow": 1.17,
+      "trendPct": -7.6,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Sol%20Ring&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 22,
+      "tcgplayerId": 100021,
+      "name": "Swords to Plowshares Demo 22",
+      "set": "BLC",
+      "setName": "Bloomburrow Commander",
+      "rarity": "Uncommon",
+      "colors": [
+        "W"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 16768.78,
+      "copiesSold": 11809,
+      "marketPrice": 1.42,
+      "lowPrice": 1.31,
+      "midPrice": 1.42,
+      "highPrice": 1.77,
+      "directLow": 1.39,
+      "trendPct": -6.65,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Swords%20to%20Plowshares&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 23,
+      "tcgplayerId": 100022,
+      "name": "Rhystic Study Demo 23",
+      "set": "WOT",
+      "setName": "Wilds of Eldraine: Enchanting Tales",
+      "rarity": "Rare",
+      "colors": [
+        "U"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Enchantment",
+      "imageUrl": "",
+      "totalSales": 396662.35,
+      "copiesSold": 8015,
+      "marketPrice": 49.49,
+      "lowPrice": 45.53,
+      "midPrice": 49.49,
+      "highPrice": 61.86,
+      "directLow": 48.5,
+      "trendPct": -5.7,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Rhystic%20Study&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 24,
+      "tcgplayerId": 100023,
+      "name": "Smothering Tithe Demo 24",
+      "set": "RNA",
+      "setName": "Ravnica Allegiance",
+      "rarity": "Rare",
+      "colors": [
+        "W"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Enchantment",
+      "imageUrl": "",
+      "totalSales": 266899.15,
+      "copiesSold": 7235,
+      "marketPrice": 36.89,
+      "lowPrice": 33.94,
+      "midPrice": 36.89,
+      "highPrice": 46.11,
+      "directLow": 36.15,
+      "trendPct": -4.75,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Smothering%20Tithe&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 25,
+      "tcgplayerId": 100024,
+      "name": "The One Ring Demo 25",
+      "set": "LTR",
+      "setName": "The Lord of the Rings: Tales of Middle-earth",
+      "rarity": "Mythic",
+      "colors": [
+        "C"
+      ],
+      "formats": [
+        "Commander",
+        "Legacy"
+      ],
+      "typeLine": "Legendary Artifact",
+      "imageUrl": "",
+      "totalSales": 525031.45,
+      "copiesSold": 6605,
+      "marketPrice": 79.49,
+      "lowPrice": 73.13,
+      "midPrice": 79.49,
+      "highPrice": 99.36,
+      "directLow": 77.9,
+      "trendPct": -3.8,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=The%20One%20Ring&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 26,
+      "tcgplayerId": 100025,
+      "name": "Cyclonic Rift Demo 26",
+      "set": "RTR",
+      "setName": "Return to Ravnica",
+      "rarity": "Rare",
+      "colors": [
+        "U"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 102714.0,
+      "copiesSold": 6360,
+      "marketPrice": 16.15,
+      "lowPrice": 14.86,
+      "midPrice": 16.15,
+      "highPrice": 20.19,
+      "directLow": 15.83,
+      "trendPct": -2.85,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Cyclonic%20Rift&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 27,
+      "tcgplayerId": 100026,
+      "name": "Dockside Extortionist Demo 27",
+      "set": "C21",
+      "setName": "Commander 2021",
+      "rarity": "Mythic",
+      "colors": [
+        "R"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Creature \u2014 Goblin Pirate",
+      "imageUrl": "",
+      "totalSales": 229719.36,
+      "copiesSold": 6162,
+      "marketPrice": 37.28,
+      "lowPrice": 34.3,
+      "midPrice": 37.28,
+      "highPrice": 46.6,
+      "directLow": 36.53,
+      "trendPct": -1.9,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Dockside%20Extortionist&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 28,
+      "tcgplayerId": 100027,
+      "name": "Force of Will Demo 28",
+      "set": "DMR",
+      "setName": "Dominaria Remastered",
+      "rarity": "Mythic",
+      "colors": [
+        "U"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 407176.82,
+      "copiesSold": 6026,
+      "marketPrice": 67.57,
+      "lowPrice": 62.16,
+      "midPrice": 67.57,
+      "highPrice": 84.46,
+      "directLow": 66.22,
+      "trendPct": -0.95,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Force%20of%20Will&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 29,
+      "tcgplayerId": 100028,
+      "name": "Demonic Tutor Demo 29",
+      "set": "STA",
+      "setName": "Strixhaven Mystical Archive",
+      "rarity": "Mythic",
+      "colors": [
+        "B"
+      ],
+      "formats": [
+        "Commander",
+        "Legacy"
+      ],
+      "typeLine": "Sorcery",
+      "imageUrl": "",
+      "totalSales": 207597.74,
+      "copiesSold": 5866,
+      "marketPrice": 35.39,
+      "lowPrice": 32.56,
+      "midPrice": 35.39,
+      "highPrice": 44.24,
+      "directLow": 34.68,
+      "trendPct": 0.0,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Demonic%20Tutor&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 30,
+      "tcgplayerId": 100029,
+      "name": "Heroic Intervention Demo 30",
+      "set": "M21",
+      "setName": "Core Set 2021",
+      "rarity": "Rare",
+      "colors": [
+        "G"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 51647.8,
+      "copiesSold": 5620,
+      "marketPrice": 9.19,
+      "lowPrice": 8.45,
+      "midPrice": 9.19,
+      "highPrice": 11.49,
+      "directLow": 9.01,
+      "trendPct": 0.95,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Heroic%20Intervention&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 31,
+      "tcgplayerId": 100030,
+      "name": "Sol Ring Demo 31",
+      "set": "CMM",
+      "setName": "Commander Masters",
+      "rarity": "Uncommon",
+      "colors": [
+        "C"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Artifact",
+      "imageUrl": "",
+      "totalSales": 15873.15,
+      "copiesSold": 12905,
+      "marketPrice": 1.23,
+      "lowPrice": 1.13,
+      "midPrice": 1.23,
+      "highPrice": 1.54,
+      "directLow": 1.21,
+      "trendPct": 1.9,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Sol%20Ring&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 32,
+      "tcgplayerId": 100031,
+      "name": "Swords to Plowshares Demo 32",
+      "set": "BLC",
+      "setName": "Bloomburrow Commander",
+      "rarity": "Uncommon",
+      "colors": [
+        "W"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 16621.88,
+      "copiesSold": 11231,
+      "marketPrice": 1.48,
+      "lowPrice": 1.36,
+      "midPrice": 1.48,
+      "highPrice": 1.85,
+      "directLow": 1.45,
+      "trendPct": 2.85,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Swords%20to%20Plowshares&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 33,
+      "tcgplayerId": 100032,
+      "name": "Rhystic Study Demo 33",
+      "set": "WOT",
+      "setName": "Wilds of Eldraine: Enchanting Tales",
+      "rarity": "Rare",
+      "colors": [
+        "U"
+      ],
+      "formats": [
+        "Commander",
+        "Legacy"
+      ],
+      "typeLine": "Enchantment",
+      "imageUrl": "",
+      "totalSales": 390602.52,
+      "copiesSold": 7623,
+      "marketPrice": 51.24,
+      "lowPrice": 47.14,
+      "midPrice": 51.24,
+      "highPrice": 64.05,
+      "directLow": 50.22,
+      "trendPct": 3.8,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Rhystic%20Study&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 34,
+      "tcgplayerId": 100033,
+      "name": "Smothering Tithe Demo 34",
+      "set": "RNA",
+      "setName": "Ravnica Allegiance",
+      "rarity": "Rare",
+      "colors": [
+        "W"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Enchantment",
+      "imageUrl": "",
+      "totalSales": 262548.3,
+      "copiesSold": 6882,
+      "marketPrice": 38.15,
+      "lowPrice": 35.1,
+      "midPrice": 38.15,
+      "highPrice": 47.69,
+      "directLow": 37.39,
+      "trendPct": 4.75,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Smothering%20Tithe&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 35,
+      "tcgplayerId": 100034,
+      "name": "The One Ring Demo 35",
+      "set": "LTR",
+      "setName": "The Lord of the Rings: Tales of Middle-earth",
+      "rarity": "Mythic",
+      "colors": [
+        "C"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Legendary Artifact",
+      "imageUrl": "",
+      "totalSales": 515815.02,
+      "copiesSold": 6282,
+      "marketPrice": 82.11,
+      "lowPrice": 75.54,
+      "midPrice": 82.11,
+      "highPrice": 102.64,
+      "directLow": 80.47,
+      "trendPct": 5.7,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=The%20One%20Ring&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 36,
+      "tcgplayerId": 100035,
+      "name": "Cyclonic Rift Demo 36",
+      "set": "RTR",
+      "setName": "Return to Ravnica",
+      "rarity": "Rare",
+      "colors": [
+        "U"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 100836.83,
+      "copiesSold": 6049,
+      "marketPrice": 16.67,
+      "lowPrice": 15.34,
+      "midPrice": 16.67,
+      "highPrice": 20.84,
+      "directLow": 16.34,
+      "trendPct": 6.65,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Cyclonic%20Rift&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 37,
+      "tcgplayerId": 100036,
+      "name": "Dockside Extortionist Demo 37",
+      "set": "C21",
+      "setName": "Commander 2021",
+      "rarity": "Mythic",
+      "colors": [
+        "R"
+      ],
+      "formats": [
+        "Commander",
+        "Legacy"
+      ],
+      "typeLine": "Creature \u2014 Goblin Pirate",
+      "imageUrl": "",
+      "totalSales": 164314.4,
+      "copiesSold": 5860,
+      "marketPrice": 28.04,
+      "lowPrice": 25.8,
+      "midPrice": 28.04,
+      "highPrice": 35.05,
+      "directLow": 27.48,
+      "trendPct": 7.6,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Dockside%20Extortionist&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 38,
+      "tcgplayerId": 100037,
+      "name": "Force of Will Demo 38",
+      "set": "DMR",
+      "setName": "Dominaria Remastered",
+      "rarity": "Mythic",
+      "colors": [
+        "U"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 403175.85,
+      "copiesSold": 5731,
+      "marketPrice": 70.35,
+      "lowPrice": 64.72,
+      "midPrice": 70.35,
+      "highPrice": 87.94,
+      "directLow": 68.94,
+      "trendPct": 8.55,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Force%20of%20Will&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 39,
+      "tcgplayerId": 100038,
+      "name": "Demonic Tutor Demo 39",
+      "set": "STA",
+      "setName": "Strixhaven Mystical Archive",
+      "rarity": "Mythic",
+      "colors": [
+        "B"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Sorcery",
+      "imageUrl": "",
+      "totalSales": 205251.41,
+      "copiesSold": 5579,
+      "marketPrice": 36.79,
+      "lowPrice": 33.85,
+      "midPrice": 36.79,
+      "highPrice": 45.99,
+      "directLow": 36.05,
+      "trendPct": -8.55,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Demonic%20Tutor&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 40,
+      "tcgplayerId": 100039,
+      "name": "Heroic Intervention Demo 40",
+      "set": "M21",
+      "setName": "Core Set 2021",
+      "rarity": "Rare",
+      "colors": [
+        "G"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 50991.3,
+      "copiesSold": 5345,
+      "marketPrice": 9.54,
+      "lowPrice": 8.78,
+      "midPrice": 9.54,
+      "highPrice": 11.92,
+      "directLow": 9.35,
+      "trendPct": -7.6,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Heroic%20Intervention&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 41,
+      "tcgplayerId": 100040,
+      "name": "Sol Ring Demo 41",
+      "set": "CMM",
+      "setName": "Commander Masters",
+      "rarity": "Uncommon",
+      "colors": [
+        "C"
+      ],
+      "formats": [
+        "Commander",
+        "Legacy"
+      ],
+      "typeLine": "Artifact",
+      "imageUrl": "",
+      "totalSales": 15710.72,
+      "copiesSold": 12274,
+      "marketPrice": 1.28,
+      "lowPrice": 1.18,
+      "midPrice": 1.28,
+      "highPrice": 1.6,
+      "directLow": 1.25,
+      "trendPct": -6.65,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Sol%20Ring&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 42,
+      "tcgplayerId": 100041,
+      "name": "Swords to Plowshares Demo 42",
+      "set": "BLC",
+      "setName": "Bloomburrow Commander",
+      "rarity": "Uncommon",
+      "colors": [
+        "W"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 16343.46,
+      "copiesSold": 10682,
+      "marketPrice": 1.53,
+      "lowPrice": 1.41,
+      "midPrice": 1.53,
+      "highPrice": 1.91,
+      "directLow": 1.5,
+      "trendPct": -5.7,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Swords%20to%20Plowshares&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 43,
+      "tcgplayerId": 100042,
+      "name": "Rhystic Study Demo 43",
+      "set": "WOT",
+      "setName": "Wilds of Eldraine: Enchanting Tales",
+      "rarity": "Rare",
+      "colors": [
+        "U"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Enchantment",
+      "imageUrl": "",
+      "totalSales": 384177.5,
+      "copiesSold": 7250,
+      "marketPrice": 52.99,
+      "lowPrice": 48.75,
+      "midPrice": 52.99,
+      "highPrice": 66.24,
+      "directLow": 51.93,
+      "trendPct": -4.75,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Rhystic%20Study&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 44,
+      "tcgplayerId": 100043,
+      "name": "Smothering Tithe Demo 44",
+      "set": "RNA",
+      "setName": "Ravnica Allegiance",
+      "rarity": "Rare",
+      "colors": [
+        "W"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Enchantment",
+      "imageUrl": "",
+      "totalSales": 257938.45,
+      "copiesSold": 6545,
+      "marketPrice": 39.41,
+      "lowPrice": 36.26,
+      "midPrice": 39.41,
+      "highPrice": 49.26,
+      "directLow": 38.62,
+      "trendPct": -3.8,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Smothering%20Tithe&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 45,
+      "tcgplayerId": 100044,
+      "name": "The One Ring Demo 45",
+      "set": "LTR",
+      "setName": "The Lord of the Rings: Tales of Middle-earth",
+      "rarity": "Mythic",
+      "colors": [
+        "C"
+      ],
+      "formats": [
+        "Commander",
+        "Legacy"
+      ],
+      "typeLine": "Legendary Artifact",
+      "imageUrl": "",
+      "totalSales": 506321.5,
+      "copiesSold": 5975,
+      "marketPrice": 84.74,
+      "lowPrice": 77.96,
+      "midPrice": 84.74,
+      "highPrice": 105.92,
+      "directLow": 83.05,
+      "trendPct": -2.85,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=The%20One%20Ring&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 46,
+      "tcgplayerId": 100045,
+      "name": "Cyclonic Rift Demo 46",
+      "set": "RTR",
+      "setName": "Return to Ravnica",
+      "rarity": "Rare",
+      "colors": [
+        "U"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 72155.16,
+      "copiesSold": 5754,
+      "marketPrice": 12.54,
+      "lowPrice": 11.54,
+      "midPrice": 12.54,
+      "highPrice": 15.67,
+      "directLow": 12.29,
+      "trendPct": -1.9,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Cyclonic%20Rift&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 47,
+      "tcgplayerId": 100046,
+      "name": "Dockside Extortionist Demo 47",
+      "set": "C21",
+      "setName": "Commander 2021",
+      "rarity": "Mythic",
+      "colors": [
+        "R"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Creature \u2014 Goblin Pirate",
+      "imageUrl": "",
+      "totalSales": 162760.8,
+      "copiesSold": 5574,
+      "marketPrice": 29.2,
+      "lowPrice": 26.86,
+      "midPrice": 29.2,
+      "highPrice": 36.5,
+      "directLow": 28.62,
+      "trendPct": -0.95,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Dockside%20Extortionist&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 48,
+      "tcgplayerId": 100047,
+      "name": "Force of Will Demo 48",
+      "set": "DMR",
+      "setName": "Dominaria Remastered",
+      "rarity": "Mythic",
+      "colors": [
+        "U"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 398631.63,
+      "copiesSold": 5451,
+      "marketPrice": 73.13,
+      "lowPrice": 67.28,
+      "midPrice": 73.13,
+      "highPrice": 91.41,
+      "directLow": 71.67,
+      "trendPct": 0.0,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Force%20of%20Will&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 49,
+      "tcgplayerId": 100048,
+      "name": "Demonic Tutor Demo 49",
+      "set": "STA",
+      "setName": "Strixhaven Mystical Archive",
+      "rarity": "Mythic",
+      "colors": [
+        "B"
+      ],
+      "formats": [
+        "Commander",
+        "Legacy"
+      ],
+      "typeLine": "Sorcery",
+      "imageUrl": "",
+      "totalSales": 202636.14,
+      "copiesSold": 5306,
+      "marketPrice": 38.19,
+      "lowPrice": 35.13,
+      "midPrice": 38.19,
+      "highPrice": 47.74,
+      "directLow": 37.43,
+      "trendPct": 0.95,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Demonic%20Tutor&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    },
+    {
+      "rank": 50,
+      "tcgplayerId": 100049,
+      "name": "Heroic Intervention Demo 50",
+      "set": "M21",
+      "setName": "Core Set 2021",
+      "rarity": "Rare",
+      "colors": [
+        "G"
+      ],
+      "formats": [
+        "Commander"
+      ],
+      "typeLine": "Instant",
+      "imageUrl": "",
+      "totalSales": 50280.76,
+      "copiesSold": 5084,
+      "marketPrice": 9.89,
+      "lowPrice": 9.1,
+      "midPrice": 9.89,
+      "highPrice": 12.36,
+      "directLow": 9.69,
+      "trendPct": 1.9,
+      "productUrl": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Heroic%20Intervention&view=grid&utm_source=mtgmarketpulse&utm_medium=affiliate"
+    }
+  ]
+}
