@@ -3,6 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { sampleTopSales } from "../data/sampleTopSales.js";
 import { fetchTcgStoreTopSales } from "./tcgplayerService.js";
+import { fetchTcgApiDevTopLive } from "./tcgapiDevService.js";
 import { clearTcgAuthCache } from "./tcgAuthService.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -86,6 +87,10 @@ export async function getProviderStatus() {
       hasAccessToken: Boolean(process.env.TCGPLAYER_ACCESS_TOKEN),
       hasStoreKey: Boolean(process.env.TCGPLAYER_STORE_KEY),
       hasMarketplaceFeed: Boolean(process.env.TCGPLAYER_MARKETPLACE_TOP_SALES_URL)
+    },
+    tcgapiDev: {
+      hasKey: Boolean(process.env.TCGAPI_DEV_KEY),
+      base: process.env.TCGAPI_DEV_BASE || "https://api.tcgapi.dev"
     }
   };
 }
@@ -94,6 +99,9 @@ async function loadRawCards({ period, limit, provider }) {
   switch (provider) {
     case "tcgplayer-store-sales":
       return fetchTcgStoreTopSales({ period, limit });
+
+    case "tcgapi-dev":
+      return fetchTcgApiDevTopLive({ period, limit: Math.min(limit, 100) });
 
     case "remote":
       return loadFromRemote(process.env.DATA_SOURCE_URL, { period, limit });

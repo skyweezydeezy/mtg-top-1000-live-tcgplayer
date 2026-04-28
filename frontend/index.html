@@ -3,30 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>MTG Top 1000 — Magic: The Gathering Sales Dashboard</title>
-<meta name="description" content="Track the top 1000 Magic: The Gathering cards by sales volume, total sales, market price, and trend data.">
-<meta name="keywords" content="MTG top sales, Magic card sales, TCGPlayer top 1000, MTG market, Magic the Gathering prices, MTG sales dashboard">
+<title>MTG Top 100 Live — Magic: The Gathering Market Dashboard</title>
+<meta name="description" content="Track the top 100 Magic: The Gathering cards by sales volume, total sales, market price, and trend data.">
+<meta name="keywords" content="MTG top sales, Magic card sales, TCGPlayer top 100, MTG market, Magic the Gathering prices, MTG sales dashboard">
 <meta name="author" content="MTG Market Pulse">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://skyweezydeezy.github.io/mtg-market-pulse/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://skyweezydeezy.github.io/mtg-market-pulse/">
-<meta property="og:title" content="MTG Top 1000 — Magic Card Sales Dashboard">
-<meta property="og:description" content="See the top 1000 Magic: The Gathering cards by sales data with bubble charts, filters, rankings, and TCGPlayer links.">
+<meta property="og:title" content="MTG Top 100 Live — Magic Card Market Dashboard">
+<meta property="og:description" content="See the top 100 Magic: The Gathering cards by sales data with bubble charts, filters, rankings, and TCGPlayer links.">
 <meta property="og:image" content="https://skyweezydeezy.github.io/mtg-market-pulse/preview.png">
-<meta property="og:site_name" content="MTG Top 1000">
+<meta property="og:site_name" content="MTG Top 100 Live">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MTG Top 1000 — Magic Card Sales Dashboard">
-<meta name="twitter:description" content="Top 1000 MTG cards by sales, market price, and trend data.">
+<meta name="twitter:title" content="MTG Top 100 Live — Magic Card Market Dashboard">
+<meta name="twitter:description" content="Top 100 MTG cards by sales, market price, and trend data.">
 <meta name="twitter:image" content="https://skyweezydeezy.github.io/mtg-market-pulse/preview.png">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "MTG Top 1000",
+  "name": "MTG Top 100 Live",
   "url": "https://skyweezydeezy.github.io/mtg-market-pulse/",
   "description": "Magic: The Gathering sales dashboard showing top cards by sales volume, total sales, market price, and trend data.",
   "applicationCategory": "FinanceApplication",
@@ -739,8 +739,8 @@ tr:hover{background:rgba(139,92,246,.1)}
         </svg>
       </div>
       <div>
-        <div class="brand-title">MTG Top 1000</div>
-        <div class="brand-sub">By Sales · TCGPlayer Data</div>
+        <div class="brand-title">MTG Top 100 Live</div>
+        <div class="brand-sub">Live Market Movers · tcgapi.dev</div>
       </div>
     </div>
 
@@ -768,7 +768,7 @@ tr:hover{background:rgba(139,92,246,.1)}
     <main class="main">
       <section class="main-head">
         <div class="title-block">
-          <div class="main-title">Top 1000 Magic Cards by Sales</div>
+          <div class="main-title">MTG Top 100 Live Market Movers</div>
           <div class="main-kicker" id="main-kicker">Bubble size = total sales. Showing top ranked cards.</div>
         </div>
 
@@ -800,8 +800,8 @@ tr:hover{background:rgba(139,92,246,.1)}
             <option value="trendPct">Trend</option>
           </select>
           <label>Render</label>
-          <input id="render-limit" type="range" min="25" max="200" step="25" value="125">
-          <span id="render-limit-label" class="mono" style="font-size:12px;color:var(--text)">125</span>
+          <input id="render-limit" type="range" min="25" max="100" step="25" value="100">
+          <span id="render-limit-label" class="mono" style="font-size:12px;color:var(--text)">100</span>
         </div>
       </section>
 
@@ -857,40 +857,19 @@ tr:hover{background:rgba(139,92,246,.1)}
   BACKEND CONTRACT
 
   Preferred endpoint:
-    GET /api/top-sales?period=30d&limit=1000
+    GET /api/top-sales?period=30d&limit=100
 
-  Expected response:
-    {
-      "period": "30d",
-      "updatedAt": "2026-04-27T18:00:00.000Z",
-      "cards": [
-        {
-          "rank": 1,
-          "tcgplayerId": 12345,
-          "name": "Card Name",
-          "set": "ABC",
-          "setName": "Set Name",
-          "rarity": "Mythic",
-          "colors": ["U"],
-          "formats": ["Commander","Modern"],
-          "imageUrl": "https://...",
-          "totalSales": 123456.78,
-          "copiesSold": 4567,
-          "marketPrice": 12.34,
-          "lowPrice": 10.00,
-          "midPrice": 12.00,
-          "highPrice": 20.00,
-          "directLow": 11.25,
-          "trendPct": 8.7,
-          "productUrl": "https://www.tcgplayer.com/product/..."
-        }
-      ]
-    }
+  With DATA_PROVIDER=tcgapi-dev, this endpoint returns live Magic market movers
+  from tcgapi.dev, not marketplace sales volume.
 
-  This front end also accepts aliases from your older price-mover app:
-    price -> marketPrice
-    pct -> trendPct
-    tcgplayerUrl -> productUrl
+  The backend calls:
+    GET https://api.tcgapi.dev/v1/prices/top-movers?game=magic&period=7d|30d|24h
+
+  tcgapi.dev top-movers returns a maximum of 50 results per direction,
+  so the backend combines 50 upward movers and 50 downward movers into a
+  100-card live market dashboard.
+
+  Never put TCGAPI_DEV_KEY in this frontend file.
 */
 
 const API_URL = window.MTGMP_API_URL || "http://localhost:3000";
@@ -906,7 +885,7 @@ const MC = {
   C:{f:"#94a3b8",s:"#64748b",l:"Colorless"}
 };
 const RARITY_COLORS = {Mythic:"#fb923c",Rare:"#facc15",Uncommon:"#38bdf8",Common:"#94a3b8"};
-const PERIODS = [["7d","7 Days"],["30d","30 Days"],["90d","90 Days"]];
+const PERIODS = [["24h","24 Hours"],["7d","7 Days"],["30d","30 Days"]];
 const FORMATS = ["All Formats","Commander","Modern","Standard","Pioneer","Legacy","Vintage","Pauper"];
 const RARITIES = ["Mythic","Rare","Uncommon","Common"];
 const TYPE_OPTIONS = ["All Types","Creature","Artifact","Enchantment","Instant","Sorcery","Land","Planeswalker"];
@@ -918,7 +897,7 @@ let watchlist = [];
 let viewMode = "bubbles";
 let page = 1;
 let pageSize = 25;
-let renderLimit = 125;
+let renderLimit = 100;
 let isDark = true;
 let raf = null;
 let nodes = [];
@@ -1010,7 +989,7 @@ const MOCK = [
 async function loadData(){
   $("live-label").textContent = "Loading data...";
   try{
-    const url = API_URL + TOP_SALES_ENDPOINT + "?period=" + encodeURIComponent(state.period) + "&limit=1000";
+    const url = API_URL + TOP_SALES_ENDPOINT + "?period=" + encodeURIComponent(state.period) + "&limit=100";
     const r = await fetch(url);
     if(!r.ok) throw new Error("API " + r.status);
     const data = await r.json();

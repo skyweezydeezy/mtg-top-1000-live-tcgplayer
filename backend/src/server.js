@@ -29,12 +29,12 @@ app.use(cors({
 
 app.get("/", (_req, res) => {
   res.json({
-    name: "MTG Top 1000 Live TCGplayer API",
+    name: "MTG Top 100 Live API",
     status: "ok",
     endpoints: {
       health: "/health",
       status: "/api/status",
-      topSales: "/api/top-sales?period=30d&limit=1000",
+      topSales: "/api/top-sales?period=30d&limit=100",
       search: "/api/search?q=sol&limit=25",
       card: "/api/card/:id"
     }
@@ -60,7 +60,7 @@ app.get("/api/status", async (_req, res, next) => {
 app.get("/api/top-sales", async (req, res, next) => {
   try {
     const period = String(req.query.period || "30d").toLowerCase();
-    const limit = clampInt(req.query.limit, 1, 1000, 1000);
+    const limit = clampInt(req.query.limit, 1, 100, 100);
     const cards = await getTopSales({ period, limit });
 
     res.json({
